@@ -1,6 +1,7 @@
 #!/bin/bash
+set -euo pipefail
 
-mkdir unpack
+mkdir -p unpack
 cd unpack
 ../magiskboot unpack ../r.img
 
@@ -36,4 +37,4 @@ fi
 ../magiskboot hexpatch system/bin/recovery 41010054a0020012f44f48a9 4101005420008052f44f48a9
 ../magiskboot cpio "$ramdisk" 'add 0755 system/bin/recovery system/bin/recovery'
 ../magiskboot repack ../r.img new-boot.img
-cp new-boot.img ../r-patched.img
+cp new-boot.img ../recovery-patched.img
