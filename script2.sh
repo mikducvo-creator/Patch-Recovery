@@ -35,6 +35,7 @@ fi
 ../magiskboot hexpatch system/bin/recovery 24f0f2ea30b1681c 24f0f2ea30b9681c
 ../magiskboot hexpatch system/bin/recovery e0031f2a8e000014 200080528e000014
 ../magiskboot hexpatch system/bin/recovery 41010054a0020012f44f48a9 4101005420008052f44f48a9
+
 ../magiskboot cpio "$ramdisk" 'add 0755 system/bin/recovery system/bin/recovery'
 ../magiskboot repack ../r.img new-boot.img
 cp new-boot.img ../recovery-patched.img
